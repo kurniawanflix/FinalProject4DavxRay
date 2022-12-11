@@ -2,6 +2,9 @@
 
 RCTN Movie merupakan situs menampilkan film terbaru.
 
+## Preview
+![Designstripe_ Macbook Pro resting on Cube (1)](https://user-images.githubusercontent.com/77148705/206906494-c42083d3-121b-4771-90f1-a5b437c317a1.png)
+
 ## Tech Stack
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
