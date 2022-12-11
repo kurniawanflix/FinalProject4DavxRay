@@ -2,6 +2,7 @@
 import { Box, Skeleton, Stack, Text, useToast } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header";
+import MovieCard from "../../components/movie-card";
 import Footer from "../../components/footer";
 import { getMovieByTitle } from "../../service/movie-services";
 
@@ -52,6 +53,44 @@ const Home = () => {
         setKeywords={setKeywords}
         handleClickSearch={handleClickSearch}
       />
+      <Box
+        px={["1rem", "1rem", "2rem", "5rem", "7rem"]}
+        py={["1.5rem", "3.5em"]}
+      >
+        <Text
+          children="Movie list"
+          fontSize="xl"
+          fontWeight="semibold"
+          textAlign="center"
+        />
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          flexWrap="wrap"
+          justifyContent={["center", "center", "center", "center"]}
+          my={["0.5rem", "2rem"]}
+        >
+          {loading ? (
+            <Stack direction="row" spacing="3rem">
+              <Skeleton w="250px" h="350px" />
+              <Skeleton w="250px" h="350px" />
+              <Skeleton w="250px" h="350px" />
+              <Skeleton w="250px" h="350px" />
+            </Stack>
+          ) : (
+            movies.map((movie, idx) => (
+              <MovieCard
+                key={idx}
+                title={movie.Title}
+                year={movie.Year}
+                poster={movie.Poster}
+              />
+            ))
+          )}
+        </Box>
+      </Box>
+      <Footer />
     </Box>
   );
 };
